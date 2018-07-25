@@ -1,0 +1,19 @@
+{
+  "name": "dummy",
+  "version": "1.0.0",
+  "description": "this is just dummy package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "reactapp"
+  ],
+  "author": "sai",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.4.1",
+    "zone.js": "^0.8.26"
+  }
+}
