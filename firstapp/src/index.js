@@ -1,13 +1,28 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
-import Header from './components/header'
+import Header from './components/header';
+import NewsList from './components/news_list';
+import JSON from './db.json';
 
-const App = () => {
-    return( 
+class App extends Component{
+    constructor(props){
+        super(props);
+
+        this.state = {
+            news:JSON
+        }
+    }
+   
+
+    render(){
+        return(
             <div>
                 <Header/>
-            </div>)
+                <NewsList sai={this.state.news}></NewsList>
+            </div>
+        )
+    }
 }
 
 ReactDOM.render(<App/>,document.getElementById('root'))
@@ -16,7 +31,16 @@ ReactDOM.render(<App/>,document.getElementById('root'))
 
 
 
-/*function add(a,b){
+/*
+<img src=""/>
+const App = () => {
+    return( 
+            <div>
+                <Header/>
+            </div>)
+}
+
+function add(a,b){
     return a+b
 }
 
@@ -37,4 +61,18 @@ export=> uslitiesed in main
 
 jsx
 
+
+state==> local variable
+
+props==>  use to transfer the value
+
+
+
+saved in state od index
+|props
+|
+|
+|
+|
+state of news list
 */

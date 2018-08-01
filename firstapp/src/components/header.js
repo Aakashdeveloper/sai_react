@@ -2,8 +2,19 @@ import React, { Component } from 'react';
 
 class Header extends Component{
 
+    constructor(props){
+        super(props)
+
+        this.state={
+            fruits:"Apple",
+            cars:  "BMW",
+            keywords:''
+        }
+    }
+
     inputchange(event){
         console.log(event.target.value)
+        this.setState({keywords:event.target.value})
     }
     render(){
         return(
@@ -12,8 +23,9 @@ class Header extends Component{
                 onClick={()=>console.log("hii")}>Logo</div>
                 <center>
                     <input placeholder="Enter your Search.."
-                        onChange={this.inputchange}
+                        onChange={this.inputchange.bind(this)}
                         />
+                    <p>{this.state.keywords}</p>
                 </center>
                 <hr/>
             </header>
@@ -49,4 +61,7 @@ const styles = {
                 background:'#D3D3D3'
             }
         }
+
+<p>{this.state.fruits}</p>
+ <p>{this.state.cars}</p>
 */
