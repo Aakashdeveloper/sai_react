@@ -6,8 +6,7 @@ const newsList = (props) => {
 
     const items = props.sai.map((item)=>{
         return(
-            <div>
-                <h1>{item.id}</h1>
+            <div key={item.id}>
                 <h2>{item.title}</h2>
                 <h4>{item.feed}</h4>
             </div>
