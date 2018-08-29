@@ -1,33 +1,37 @@
-import React, { Component } from 'react';
-import Banner from '../components/banner';
-import ArtistList from '../components/artist_list';
+import React,{Component} from 'react';
 
-const URL_ARTIST = "http://localhost:8900/artists"
+import Banner from "../components/banner";
+import ArtistList from "./artist_list";
 
-class Home extends Component {
+const URL_ARTISTS = "http://localhost:3004/artists";
+
+class Home extends Component{
+
     constructor(props){
         super(props);
 
-        this.state = {
+        this.state ={
             artists:''
         }
     }
+
     componentDidMount(){
-        fetch(URL_ARTIST,{
-            method:'GET'
-        }).then(response => response.json())
-        .then((json)=>{
-            this.setState({
-                artists:json
+            fetch(URL_ARTISTS,{
+                method:'GET'
             })
-        })
-    }
+            .then(response => response.json())
+            .then(json =>{
+                console.log(json)
+                this.setState({artists:json});
+            })
+      
+        }
 
     render(){
         return(
-            <div>
+            <div> 
                 <Banner></Banner>
-                <ArtistList allArtists = {this.state.artists}></ArtistList>
+                <ArtistList allArtist={this.state.artists}></ArtistList>
             </div>
         )
     }

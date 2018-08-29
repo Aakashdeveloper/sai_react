@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 const ArtistList =(props) =>{
   
 
-    const list = ({allArtists}) =>{
-        if(allArtists){
-            return allArtists.map((item)=>{
+    const list = ({allArtist}) =>{
+        if(allArtist){
+            return allArtist.map((item)=>{
 
                 const style ={
                     background:`url('/images/covers/${item.cover}.jpg')

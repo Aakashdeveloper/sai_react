@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
-import Header from './header'
+import Header from './header';
+import AlbumList from './album_list';
 
-const REQ_URL =  "http://localhost:8900/artists";
+const REQ_URL =  "http://localhost:3004/artists";
 
 class Artist extends Component {
-
+   
     constructor(props){
+        console.log(props);
         super(props);
 
         this.state={
@@ -13,7 +15,8 @@ class Artist extends Component {
         }
     }
 
-    ComponentDidMount(){
+    componentDidMount(){
+        console.log(this.props)
         console.log(this.props.match.params.artistid)
         fetch(`${REQ_URL}/${this.props.match.params.artistid}`,{
             method:'GET'
@@ -41,6 +44,7 @@ class Artist extends Component {
                             {this.state.artist.bio}
                         </div>
                     </div>
+                    <AlbumList albumlist={this.state.artist.albums}></AlbumList>
                 </div>
             </div>
         )
